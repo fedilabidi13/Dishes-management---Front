@@ -2,75 +2,92 @@
 <html>
 <head>
   <title>Plats de restaurant</title>
+  
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/assets/img/icons/favicon.ico"/>
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/animate/animate.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/css-hamburgers/hamburgers.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/select2/select2.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <style>
-    .container {
-      position: relative;
-      text-align: center;
-      color: white;
-    }
+ <style>
+  *{
+  
+  font-family: 'myFont', sans-serif;
 
-    /* Bottom left text */
-    .bottom-left {
-      position: absolute;
-      bottom: 8px;
-      left: 16px;
-    }
-
-    /* Top left text */
-    .top-left {
-      position: absolute;
-      top: 8px;
-      left: 16px;
-    }
-
-    /* Top right text */
-    .top-right {
-      position: absolute;
-      top: 8px;
-      right: 16px;
-    }
-
-    /* Bottom right text */
-    .bottom-right {
-      position: absolute;
-      bottom: 8px;
-      right: 16px;
-    }
-
-    /* Centered text */
-    .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    img.background {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-      filter: blur(5px);
-    }
-  </style>
+  }
+  .bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  
+  
+  
+ 
+  
+  
+}
+ </style>
 </head>
 <body >
-<div class="container">
-  <img src="assets/img/header.jpg" style="width: 100%; height: 30rem">
-  <div style="color: white" class="centered">
-    <h3 style="color: #069a0e ">Chili's Tunisie</h3>
-    <h1>
-      Découvrez les
-      meilleures recettes
-      syriennes
-    </h1>
-    <button class="btn btn-primary  btn-danger">Voir notre menu</button>
-  </div>
+  <header>
+    <br>
+    <div style="padding: 10%;" class="d-flex justify-content-center">
+      <div class="bg-text text-center" style="padding: 5%;">
+        <div style="color: white;" class="" >
+          <h1 style="color: #069a0e " >Chili's Tunisie</h1>
+        </div>
+        <div style="color: white;" >
+          <h1>
+            Découvrez les
+            meilleures recettes
+            syriennes
+          </h1>
+        </div>
+        <div style="color: white;" >
+          
+          <button class="btn btn-primary  btn-danger">Voir notre menu</button>
+        </div>
+      </div>
+    </div>
+   
+    
+  </header>
+  <nav class="navbar navbar-expand-sm fixed-top navbar-light">
+    <div class="container">
+        <a class="navbar-brand text-white" href="#">Chilli's Tunisie</a>
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                    <a class="nav-link  text-white" href="#">Nos plats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">A propos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="#">Contactez nous</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-</div>
 <div style="padding-left: 10%; padding-right: 10%; padding-top: 2%">
   <div class="text-center">
 
@@ -95,7 +112,7 @@ border-color:red;">
   </div>
   <div class="container text-center">
     <div class="row align-items-start">
-      <div class="col" *ngFor="let plat of platList">
+      <div class="col-md-3" *ngFor="let plat of platList">
         <img src="{{plat.media.imagenUrl}}" height="250px" width="200px">
         <h5 style="color: #ff0000;">{{plat.titre}}</h5>
         <h5 style="color: #069a0e">{{plat.prix}}</h5>
@@ -103,17 +120,6 @@ border-color:red;">
     </div>
   </div>
   <br>
-  <br>
-  <br>
-  <div class="container text-center">
-    <div class="row align-items-start">
-      <div class="col" *ngFor="let plat of platList">
-        <img src="{{plat.media.imagenUrl}}" height="250px" width="200px">
-        <h5 style="color: #ff0000;">{{plat.titre}}</h5>
-        <h5 style="color: #069a0e">{{plat.prix}}</h5>
-      </div>
-    </div>
-  </div>
   <br>
   <br>
 
@@ -122,26 +128,50 @@ border-color:red;">
   </div>
   <br>
   <br>
-  <div class="container text-center">
-    <div class="row align-items-start">
-      <div class="col" *ngFor="let plat of platList">
-        <img src="{{plat.media.imagenUrl}}" height="250px" width="200px">
-        <h5 style="color: #ff0000;">{{plat.titre}}</h5>
-        <h5 style="color: #069a0e">{{plat.prix}}</h5>
-      </div>
+  
+</div>
+<div class="contact1" style="border: #ff0000;
+border-radius: 1rem;
+border-width: 5px;">
+  <div class="container-contact1">
+    <div class="contact1-pic js-tilt" data-tilt>
+      <img src="assets/img/img-01.png" alt="IMG">
     </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="container text-center">
-    <div class="row align-items-start">
-      <div class="col" *ngFor="let plat of platList">
-        <img src="{{plat.media.imagenUrl}}" height="250px" width="200px">
-        <h5 style="color: #ff0000;">{{plat.titre}}</h5>
-        <h5 style="color: #069a0e">{{plat.prix}}</h5>
+
+    <form class="contact1-form validate-form">
+      <span class="contact1-form-title">
+        Get in touch
+      </span>
+
+      <div class="wrap-input1 validate-input" data-validate = "Name is required">
+        <input class="input1" type="text" name="name" placeholder="Name">
+        <span class="shadow-input1"></span>
       </div>
-    </div>
+
+      <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <input class="input1" type="text" name="email" placeholder="Email">
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="wrap-input1 validate-input" data-validate = "Subject is required">
+        <input class="input1" type="text" name="subject" placeholder="Subject">
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="wrap-input1 validate-input" data-validate = "Message is required">
+        <textarea class="input1" name="message" placeholder="Message"></textarea>
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="container-contact1-form-btn">
+        <button class="contact1-form-btn">
+          <span>
+            Send Email
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+    </form>
   </div>
 </div>
 

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Plat} from "../models/Plat";
 import {Router} from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin',
@@ -32,12 +33,28 @@ export class AdminComponent implements OnInit{
     this.http.post("http://localhost:8080/delete?id="+id,{}).subscribe(
       data=>
       {
-        window.location.reload()
+        Swal.fire('Bravo!',
+        'Vous avez supprimé le plat!',
+        'success').then((result) => {
+          // Reload the Page
+          location.reload();
+        });
+   
       }, error => {
-        window.location.reload()
+        Swal.fire('Bravo!',
+        'Vous avez supprimé le plat!',
+        'success').then((result) => {
+          // Reload the Page
+          location.reload();
+        });
+        
       }
     )
   }
 
 
 }
+function swal(arg0: { title: string; text: string; type: string; }, arg1: () => void) {
+  throw new Error('Function not implemented.');
+}
+

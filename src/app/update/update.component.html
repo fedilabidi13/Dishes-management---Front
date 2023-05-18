@@ -38,7 +38,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/admin">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
@@ -50,7 +50,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" routerLink="/admin">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -292,12 +292,18 @@
             <form>
               <div class="form-group">
                 <label >Titre</label>
-                <input type="text" class="form-control"  value="{{plat.titre}}"  [(ngModel)]="plat.titre"  >
+                <input type="text" class="form-control" name="dsfdsf" value="{{plat.titre}}"  [(ngModel)]="plat.titre"  >
               </div>
               <div class="form-group">
                 <label >Prix</label>
-                <input type="text" class="form-control" value="{{plat.prix}}"   [(ngModel)]="plat.prix" >
+                <input type="text" class="form-control" name="qsdssssqa" value="{{plat.prix}}"   [(ngModel)]="plat.prix" >
               </div>
+              <div class="form-group">
+                <label >Old picture</label>
+                <br>
+                <img src="{{plat.media.imagenUrl}}" height="70px" width="150px">
+              </div>
+              
               <div class="mb-3">
                 <label for="formFile" class="form-label"></label>
                 <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">

@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Plat} from "../models/Plat";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
@@ -16,7 +17,7 @@ export class UpdateComponent implements OnInit{
   prix: string='';
   private fileToUpload!: File
   updateForm !: FormGroup;
-  constructor(private fb: FormBuilder, private _Activatedroute:ActivatedRoute, private http : HttpClient) {
+  constructor(private router : Router,private fb: FormBuilder, private _Activatedroute:ActivatedRoute, private http : HttpClient) {
   }
   ngOnInit(): void {
     this.id=this._Activatedroute.snapshot.paramMap.get("id");
@@ -37,7 +38,7 @@ export class UpdateComponent implements OnInit{
 
 
   }
-  onSubmit()
+  onSubmit():void
   {
     console.log('begining upload')
 
@@ -51,6 +52,12 @@ export class UpdateComponent implements OnInit{
       data=>
       {
         console.log(data)
+        Swal.fire('Bravo!',
+        'Vous avez modifié le plat!',
+        'success').then((result) => {
+          // Reload the Page
+          this.router.navigate(['/admin']);
+        });
       }
     )
   }

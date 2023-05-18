@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -7,8 +8,8 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent {
-  prix !: string;
-  titre !: string ;
+  prix : string='';
+  titre : string='' ;
   private fileToUpload!: File
   constructor(private http : HttpClient) {
   }
@@ -26,6 +27,13 @@ export class AddComponent {
       data=>
       {
         console.log(data)
+        this.titre=''
+        this.prix=''
+        Swal.fire(
+          'Bravo!',
+          'Vous avez ajouté un plat !',
+          'success'
+        )
       }
     )
   }

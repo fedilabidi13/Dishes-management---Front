@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'myFont';
+    src: url('assets/fonts/Pacifico-Regular.ttf') format('truetype');
+    /* Add other font formats (e.g., woff, woff2) if available */
+    /* src: url('../assets/fonts/your-font-file.woff') format('woff'), */
+    /*      url('../assets/fonts/your-font-file.woff2') format('woff2'); */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
